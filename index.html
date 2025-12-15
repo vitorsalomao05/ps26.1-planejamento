@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planejamento PS 2026.1 - Entidade de IA</title>
+    <style>
+        :root {
+            --primary: #7c3aed;       /* Roxo InsperAI */
+            --primary-dark: #6d28d9;
+            --secondary: #2563eb;     /* Azul InsperAI */
+            --bg-body: #f1f5f9;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --card-bg: #ffffff;
+            --accent-green: #10b981;  /* Para Projetos */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+
+        body { display: flex; min-height: 100vh; background-color: var(--bg-body); color: var(--text-main); }
+
+        /* Sidebar Navigation */
+        aside {
+            width: 280px;
+            background-color: var(--secondary);
+            color: white;
+            padding: 2rem;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            border-right: 1px solid #1e293b;
+        }
+
+
+        aside nav ul { list-style: none; }
+        aside nav li { margin-bottom: 0.5rem; }
+        aside nav a { 
+            text-decoration: none; color: #cbd5e1; display: block; padding: 0.75rem; border-radius: 6px; font-size: 0.95rem; transition: 0.2s; font-weight: 500;
+        }
+        aside nav a:hover, aside nav a.active { color: white; background-color: rgba(255,255,255,0.15); }
+
+        /* Main Content */
+        main { margin-left: 280px; flex: 1; padding: 3rem 5rem; }
+        
+        h2 { font-size: 1.8rem; color: var(--secondary); margin-bottom: 1.5rem; border-bottom: 2px solid #cbd5e1; padding-bottom: 0.5rem; }
+        h3 { color: var(--primary); margin: 1.5rem 0 0.5rem; font-size: 1.2rem; font-weight: 600; }
+        p { line-height: 1.6; margin-bottom: 1rem; color: #475569; }
+
+        /* Cards & Lists */
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 3rem;
+        }
+
+        .step-list { list-style: none; counter-reset: step-counter; }
+        .step-list > li { position: relative; padding-left: 3.5rem; margin-bottom: 1.5rem; }
+        .step-list > li::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0; top: 0;
+            width: 2.2rem; height: 2.2rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+            line-height: 2.2rem;
+            font-weight: bold;
+        }
+        .step-list strong { color: var(--secondary); }
+
+        /* Timeline for Trainee Phase */
+        .timeline { border-left: 3px solid #e2e8f0; margin-left: 1.1rem; padding-left: 2.5rem; padding-top: 1rem; }
+        .timeline-item { position: relative; margin-bottom: 2.5rem; }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -3.1rem; top: 0.3rem;
+            width: 1.2rem; height: 1.2rem; background: white; border-radius: 50%; border: 4px solid var(--primary);
+        }
+        
+        .timeline-item.project::before { border-color: var(--accent-green); }
+        .timeline-item h4 { font-size: 1.1rem; color: var(--secondary); margin-bottom: 0.5rem; font-weight: 700; }
+        
+        .module-content { background: #f8fafc; padding: 1rem; border-radius: 6px; border: 1px solid #e2e8f0; }
+        .module-content p { margin-bottom: 0.5rem; font-size: 0.95rem; display: flex; align-items: center; }
+        .module-content p::before { content: "•"; color: var(--primary); margin-right: 0.5rem; font-weight: bold; }
+
+        .tag { 
+            display: inline-block; padding: 0.25rem 0.75rem; background: #dbeafe; color: var(--primary-dark); 
+            border-radius: 20px; font-size: 0.75rem; font-weight: bold; margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .tag.proj { background: #d1fae5; color: #065f46; }
+
+        /* Studio Class Box */
+        .info-box {
+            background-color: #eff6ff;
+            border-left: 4px solid var(--primary);
+            padding: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: #1e3a8a;
+        }
+
+        @media (max-width: 768px) {
+            aside { position: relative; width: 100%; height: auto; }
+            main { margin-left: 0; padding: 1.5rem; }
+            body { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <aside>
+        <div style="margin-bottom: 2rem;">
+            <!-- Adicione a logo da InsperAI aqui -->
+            <img src="assets/insperai-logo.png" alt="InsperAI Logo" style="width: 100%; max-width: 100px; height: auto;">
+            <div style="font-size: 0.9rem; opacity: 0.8; font-weight: 400; color: #cbd5e1; margin-top: 0.5rem;">PS 2026.1</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#divulgacao">1. Divulgação de Inscrições</a></li>
+                <li><a href="#fase1">2. Primeira Fase</a></li>
+                <li><a href="#fase2">3. Segunda Fase</a></li>
+                <li><a href="#trainee">4. Fase Trainee</a></li>
+                <li><a href="#selecao">5. Seleção Final</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        
+        <section id="divulgacao" class="card">
+            <h2>1. Divulgação de Inscrições</h2>
+            <p>Estratégia de atração e publicação do edital.</p>
+        </section>
+
+        <section id="fase1" class="card">
+            <h2>2. Primeira Fase: Prova Técnica</h2>
+            <p>Avaliação objetiva de raciocínio e conhecimentos prévios.</p>
+            <ol class="step-list">
+                <li>
+                    <strong>A Definir:</strong>
+                    Formato e rubrica de correção.
+                </li>
+                <li>
+                    <strong>Conteúdo da Prova:</strong>
+                    <br>• Questões de Teste de Lógica.
+                    <br>• Questões de Lógica aplicada à Programação.
+                </li>
+                <li><strong>Correção e Divulgação:</strong> Ranking para 2ª fase.</li>
+            </ol>
+        </section>
+
+        <section id="fase2" class="card">
+            <h2>3. Segunda Fase: Entrevistas</h2>
+            <p>Avaliação fit cultural e soft-skills.</p>
+            <ol class="step-list">
+                <li><strong>A Definir:</strong> Formato, temas e rubrica.</li>
+                <li><strong>Divulgação dos Temas:</strong> Material prévio enviado aos candidatos.</li>
+                <li><strong>Avaliação e Correção:</strong> Entrevistas com diretoria/membros.</li>
+                <li><strong>Resultado:</strong> Aprovação para o Trainee.</li>
+            </ol>
+        </section>
+
+        <section id="trainee" class="card">
+            <h2>4. Fase Trainee</h2>
+            <p>Capacitação técnica intensiva.</p>
+
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <span class="tag">Python</span>
+                    <h4>4.1 Fundamentos de Data Science</h4>
+                    <div class="module-content">
+                        <p>Introdução à manipulação de dados em Python</p>
+                        <p><strong>Pandas & NumPy:</strong> Tratamento e análise de dados</p>
+                        <p><strong>Matplotlib:</strong> Visualização de dados básica</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="tag">Machine Learning</span>
+                    <h4>4.2 Introdução a ML Clássico</h4>
+                    <div class="module-content">
+                        <p>Ensino e introdução: Supervised Learning</p>
+                        <p>Modelos de Regressão (Atividade: modelo simples)</p>
+                        <p>Modelos de Classificação (Atividade: modelo simples)</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item project">
+                    <span class="tag proj">PROJETO 1</span>
+                    <h4>4.3 Aplicação de Machine Learning</h4>
+                    <div class="module-content">
+                        <p>Proposta de Projeto</p>
+                        <p>1 Aula Teórica + 1 Aula Estúdio (Presencial)</p>
+                        <p>Entrega: Apresentação Presencial</p>
+                        <p>Correção e Feedback</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="tag">Deep Learning</span>
+                    <h4>4.4 Introdução a Deep Learning</h4>
+                    <div class="module-content">
+                        <p>Transição ML para DL (Regressão vs Neurônio)</p>
+                        <p>Redes Neurais para Regressão e Classificação (Atividade)</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="tag">TensorFlow</span>
+                    <h4>4.5 CNN + TensorFlow</h4>
+                    <div class="module-content">
+                        <p>Arquitetura: De Multi-layer NN a CNN</p>
+                        <p>Introdução ao ecossistema TensorFlow</p>
+                        <p>Modelos funcionais de CNN (Atividade)</p>
+                    </div>
+                </div>
+
+                 <div class="timeline-item project">
+                    <span class="tag proj">PROJETO 2 (FINAL)</span>
+                    <h4>4.6 Aplicação Final em TensorFlow</h4>
+                    <div class="module-content">
+                        <p>Tema Aberto (Autonomia)</p>
+                        <p>1 Aula Prática + 1 Aula Estúdio (Presencial)</p>
+                        <p>Entrega Presencial</p>
+                        <p>Correção e Feedback</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="selecao" class="card">
+            <h2>5. Seleção Final de Membros</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div>
+                    <h3>Processo</h3>
+                    <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                        <li>5.1 Formulário</li>
+                        <li>5.2 Filtro Inicial (Interno)</li>
+                        <li>5.3 Entrevistas</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Deliberação</h3>
+                    <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                        <li>5.4 Reunião 1 (Vários membros/diretores)</li>
+                        <li>5.5 Reunião Final (Restrita a 3 diretores/membros)</li>
+                        <li>5.6 Divulgação de Resultados</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
